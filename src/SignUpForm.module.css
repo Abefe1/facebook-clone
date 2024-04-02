@@ -1,0 +1,206 @@
+
+.mainContainer{
+    width: 28%;
+    height: auto;
+    position: absolute;
+    left: 500px;
+    bottom: 100px;
+    padding: 2rem;
+    background-color: white;
+}
+
+.form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: start;
+    align-items: start;
+    background-color: transparent;
+}
+
+.toptContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    background-color: transparent;
+}
+
+.bottomContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    background-color: transparent;
+}
+
+.textContainer{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    justify-content: start;
+    align-items: start;
+    background-color: transparent;
+}
+
+.textContainer h4{
+    font-size: 2rem;
+    background-color: transparent;
+}
+
+.textContainer p{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #c4c4c4;
+    background-color: transparent;
+}
+
+.iconContainer{
+    background-color: transparent;
+}
+
+.firstInputContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    column-gap: 0.5rem;
+    background-color: transparent;
+}
+
+.firstInputContainer input{
+    width: 50%;
+    height: 40px;
+    padding-left: 0.5rem;
+    border: none;
+    border: 1px solid #CCD0D5;
+    border-radius: 0.5rem;
+    background-color: #F5F6F7;
+}
+
+.secondInputContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 1rem;
+    background-color: transparent;
+}
+
+.secondInputContainer input{
+    width: 100%;
+    height: 40px;
+    padding-left: 0.5rem;
+    border: none;
+    border: 1px solid #CCD0D5;
+    border-radius: 0.5rem;
+    background-color: #F5F6F7;
+}
+
+.textAndSelectFieldsContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    justify-content: start;
+    align-items: start;
+    background-color: transparent;
+}
+
+.textAndSelectFieldsContainer p{
+    font-size: 0.8rem;
+    background-color: transparent;
+    color: #aaa9a9;
+}
+
+.selectFieldsContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between  ;
+    align-items: start;
+    background-color: transparent;
+}
+
+.selectFieldsContainer select{
+    width: 32%;
+    height: 40px;
+    padding-left: 0.3rem;
+    padding-right: 0.5rem;
+    border: none;
+    border: 1px solid #CCD0D5;
+    border-radius: 0.5rem;
+    background-color: transparent;
+}
+
+.textAndRadioOptionsContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    justify-content: start;
+    align-items: start;
+    background-color: transparent;
+}
+
+.textAndRadioOptionsContainer h5{
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: transparent;
+    color: #aaa9a9;
+}
+
+.radioOptionsContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items: start;
+    background-color: transparent;
+}
+
+.radioOptionsContainer label{
+    width: 32%;
+    height: 40px;
+    display:flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.3rem;
+    padding-right: 0.5rem;
+    border: none;
+    border: 1px solid #CCD0D5;
+    border-radius: 0.5rem;
+    background-color: transparent;
+}
+
+.radioOptionsContainer p{
+    background-color: transparent;
+}
+
+button{
+    width: 50%;
+    height: 40px;
+    margin-top: 1rem;
+    background-color: transparent;
+    background-color: #00A400;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+}
