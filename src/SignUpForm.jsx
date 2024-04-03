@@ -83,7 +83,7 @@ const SignUpForm = ({page, setPage})=>{
 
     ]
 
-    const genders=[male, female, custom]
+    // const genders=[male, female, custom]
 
 
     const validate =()=>{
@@ -188,17 +188,17 @@ const SignUpForm = ({page, setPage})=>{
                         <div className={style.radioOptionsContainer}>
                             <label>
                                 <p>Female</p>
-                                <input type="radio" name="gender" id="female" value={formDatas.gender} />
+                                <input type="radio" name="gender" id="female"  />
                             </label> 
 
                             <label>
                                 <p>Male</p>
-                                <input type="radio" name="gender" id="male"  value={formDatas.gender}/>
+                                <input type="radio" name="gender" id="male"  />
                             </label>
 
                             <label>
                                 <p>Custom</p>
-                                <input type="radio" name="gender" id="custom"  value={formDatas.gender}/>
+                                <input type="radio" name="gender" id="custom"  />
                             </label>
                         </div>
                     </div>
