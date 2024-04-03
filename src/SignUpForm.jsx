@@ -1,23 +1,40 @@
 import React, { useState } from "react";
-import signUpCss from './SignUpForm.module.css'
+import style from './SignUpForm.module.css'
 
 
-const SignUpFormComponent = ({page, setPage})=>{
+const SignUpForm = ({page, setPage})=>{
 
-    const [formData, setFormData] = useState(
+    const number=[]
+    for(let i=1; i<=31; i++){
+        number.push(i);
+    }
+
+    const months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    let date = new Date();
+    let year= date.getFullYear();
+    const years=[]
+    for(let i=1900; i<=year; i++){
+        years.push(i);
+    }
+    const [formDatas, setformDatas] = useState(
         {
             firstName: ``,
             surname: ``,
             email:``,
-            password: ``
+            password: ``,
+            birthDay:``,
+            birthMonth:``,
+            birtYear:``,
+            gender:``
         }
     )
 
-    const handleFormData = (e)=>{
+    const handleformDatas = (e)=>{
         const name = e.target.name 
         const value = e.target.value 
 
-        setFormData((prevState)=>(
+        setformDatas((prevState)=>(
             {
                 ...prevState,
                 [name] : value
@@ -26,32 +43,66 @@ const SignUpFormComponent = ({page, setPage})=>{
     }
 
 
-    const auth =()=>{
-        if(formData.firstName === ``){
-            document.getElementById('firstName').style.borderColor = `red`
-        }else {
-            document.getElementById(`firstName`).style.borderColor = `#CCD0D5`
+    let firstname=document.getElementById('firstName')
+    let lastname=document.getElementById('surname')
+    let email=document.getElementById('email')
+    let password=document.getElementById('password')
+    let Years=document.getElementById('years')
+    let month=document.getElementById('months')
+    let day=document.getElementById('days')
+    let male=document.getElementById('male')
+    let female=document.getElementById('female')
+    let custom=document.getElementById('custom')
+
+    const infosValidation=[
+        {
+            element:firstname,
+            value:formDatas.firstName
+        },{
+            element:lastname,
+            value:formDatas.surname
+        },{
+            element:email,
+            value:formDatas.email
+        },{
+            element:password,
+            value:formDatas.password
+        },{
+            element:Years,
+            value:formDatas.birtYear
+        }, {
+            element:month,
+            value:formDatas.birthMonth
+        }, {
+            element:day,
+            value:formDatas.birthDay
+        }, {
+            element:[male, female, custom],
+            value:formDatas.gender
         }
 
-        if(formData.surname === ``){
-            document.getElementById(`surname`).style.borderColor = `red`
-        }else {
-            document.getElementById(`surname`).style.borderColor = `#CCD0D5`
+    ]
 
+
+    const validate =()=>{
+        for(let j=0; j<infosValidation.length; j++){
+            if (infosValidation[j].value===``){
+                infosValidation[j].element.style.borderColor=`red`
+                infosValidation[j].element.style.borderWidth = `2px`
+            } else{infosValidation[j].element.style.borderColor = `#CCD0D5`}
         }
 
-        if(formData.email === ``){
-            document.getElementById('email').style.borderColor = `red`
-        }else {
-            document.getElementById(`email`).style.borderColor = `#CCD0D5`
+        if (infosValidation[j].value===formDatas.gender){
+            for(let k=0; k<infosValidation[j].element.length; k++){
+                if(infosValidation[j].value===``){
+                    infosValidation[j].element[k].style.borderColor=`red`
+                    infosValidation[j].element[k].style.borderWidth = `2px`
+            } else{infosValidation[j].element[k].style.borderColor = `#CCD0D5`}
+                }
+            }
         }
-
-        if(formData.password === ``){
-            document.getElementById('password').style.borderColor = `red`
-        }else {
-            document.getElementById(`password`).style.borderColor = `#CCD0D5`
-        }
-    }
+         
+    
   
 
     const handleSubmit = (e)=>{
@@ -63,82 +114,94 @@ const SignUpFormComponent = ({page, setPage})=>{
     }
 
     return(
-        <div className={signUpCss.mainContainer}>
-            <form onSubmit={handleSubmit} className={signUpCss.form}>
-                <div className={signUpCss.toptContainer}>
-                    <div className={signUpCss.textContainer}>
+        <div className={style.mainContainer}>
+            <form onSubmit={handleSubmit} className={style.form}>
+                <div className={style.toptContainer}>
+                    <div className={style.textContainer}>
                         <h4>Sign Up</h4>
                         <p>It's quick and easy.</p>
                     </div>
 
-                    <div onClick={()=>{closeModal()}}  className={signUpCss.iconContainer}>
-                        <i style={{backgroundColor:`transparent`}} class="fa-solid fa-x"></i>
+                    <div onClick={()=>{closeModal()}}  className={style.iconContainer}>
+                        {/* <button style={{color:`black`, backgroundColor:`transparent`,  fontSize:`1.5rem`, alignSelf:`top`}} >X</button> */}
+                        <p style={{fontSize:`2rem`, fontWeight:`700`}}>x</p>
                     </div>
                 </div>
 
-                <div className={signUpCss.bottomContainer}>
+                <hr />
+
+                <div className={style.bottomContainer}>
                       
-                    <div className={signUpCss.firstInputContainer}>
-                        <input id="firstName"  type="text" placeholder="First name" autoFocus name="firstName" value={formData.firstName} onChange={(e)=>{handleFormData(e), auth()}} />
-                        <input type="text" id="surname" placeholder="Surname" name="surname" value={formData.surname} onChange={(e)=>{handleFormData(e), auth()}} />
+                    <div className={style.firstInputContainer}>
+                        <input id="firstName"  type="text" placeholder="First name" autoFocus name="firstName" value={formDatas.firstName} onChange={(e)=>{handleformDatas(e), validate()}} />
+                        <input type="text" id="surname" placeholder="Surname" name="surname" value={formDatas.surname} onChange={(e)=>{handleformDatas(e), validate()}} />
                     </div>
 
-                    <div className={signUpCss.secondInputContainer}>
-                        <input type="text" id="email" placeholder="Mobile number or email address" name="email" value={formData.email} onChange={(e)=>{handleFormData(e), auth()}} />
-                        <input type="password" id="password" placeholder="New Password" name="password" value={formData.password} onChange={(e)=>{handleFormData(e), auth()}} />
+                    <div className={style.secondInputContainer}>
+                        <input type="text" id="email" placeholder="Mobile number or email address" name="email" value={formDatas.email} onChange={(e)=>{handleformDatas(e), validate()}} />
+                        <input type="password" id="password" placeholder="New Password" name="password" value={formDatas.password} onChange={(e)=>{handleformDatas(e), validate()}} />
                     </div>
 
-                    <div className={signUpCss.textAndSelectFieldsContainer}>
-                        <p>Date of birth?</p>
+                    <div className={style.textAndSelectFieldsContainer}>
+                        <p className={style.p}>Date of birth <span className={style.questionMark}>?</span></p>
                         
-                        <div className={signUpCss.selectFieldsContainer}>
-                            <select name="" id="">
-                                <option value=""> 30</option>
-                                <option value="">31</option>
-                                <option value="">1</option>
+                        <div className={style.selectFieldsContainer}>
+                            <select name="" id="days" value={formDatas.birthDay}>
+                                {number.map((digit, index)=>{
+                                    return(<option value={digit} key={index}>{digit}</option>)
+                                })}
+                                 
                             </select>
 
-                            <select name="" id="">
-                                <option value=""> Mar</option>
-                                <option value="">Apr</option>
-                                <option value="">May</option>
+                            <select name="" id="months" value={formDatas.birthMonth}>
+                                {months.map((month, index)=>{
+                                    return(<option value={month} key={index}>{month}</option>)
+                                })}
+                                 
                             </select>
 
-                            <select name="" id="">
-                                <option value=""> 2024</option>
-                                <option value="">2025</option>
-                                <option value="">2026</option>
+                            <select name="" id="years" value={formDatas.birtYear}>
+                                {years.map((year, index)=>{
+                                    return(<option value={year} key={index}>{year}</option>)
+                                })}
+                                 
                             </select>
                         </div>
                         
                     </div>
 
-                    <div className={signUpCss.textAndRadioOptionsContainer}>
-                        <h5>Gender?</h5>
+                    <div className={style.textAndRadioOptionsContainer}>
+                        <h5 className={style.p}>Gender <span className={style.questionMark}>?</span></h5>
 
-                        <div className={signUpCss.radioOptionsContainer}>
+                        <div className={style.radioOptionsContainer}>
                             <label>
                                 <p>Female</p>
-                                <input type="radio" name="gender" id="" />
+                                <input type="radio" name="gender" id="female" value={formDatas.gender} />
                             </label> 
 
                             <label>
                                 <p>Male</p>
-                                <input type="radio" name="gender" id="" />
+                                <input type="radio" name="gender" id="male"  value={formDatas.gender}/>
                             </label>
 
                             <label>
                                 <p>Custom</p>
-                                <input type="radio" name="gender" id="" />
+                                <input type="radio" name="gender" id="custom"  value={formDatas.gender}/>
                             </label>
                         </div>
                     </div>
 
-                    <button onClick={auth} type="submit">Sign UP</button>
+                    <p>People who use our service may have uploaded your 
+                        contact Information to Facebook. <span><a href="http://">Learn more</a></span></p>
+                    <p>By clicking Sign Up, you agree to Our Terms, Privacy, Policy and Cookies Policy.
+                        You may receive SMS notification from us and can opt out at anytime
+                    </p>
+
+                    <button onClick={validate} type="submit">Sign UP</button>
                 </div>
             </form>
         </div>
     )
 }
 
-export default SignUpFormComponent
+export default SignUpForm

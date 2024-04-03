@@ -1,22 +1,28 @@
 
 .mainContainer{
-    width: 28%;
+    width: 30%;
     height: auto;
+    display: flex;
+    align-items: center;
     position: absolute;
     left: 500px;
-    bottom: 100px;
-    padding: 2rem;
+    bottom: 0.8rem;
+    border-radius: 10px;
     background-color: white;
+    
+    
 }
 
 .form{
     width: 100%;
     height: auto;
     display: flex;
+    border-radius: 10px;
     flex-direction: column;
     row-gap: 2rem;
     justify-content: start;
     align-items: start;
+    padding: 2rem 0;
     background-color: transparent;
 }
 
@@ -25,8 +31,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     background-color: transparent;
+    padding: 0 1.5rem;
 }
 
 .bottomContainer{
@@ -38,6 +45,7 @@
     align-items: center;
     row-gap: 1rem;
     background-color: transparent;
+    padding: 0 1.5rem;
 }
 
 .textContainer{
@@ -58,15 +66,26 @@
 
 .textContainer p{
     font-size: 0.9rem;
-    font-weight: 500;
-    color: #c4c4c4;
+    color: #000000c3;
     background-color: transparent;
+    font-weight: 600;
 }
 
 .iconContainer{
     background-color: transparent;
+    color: black;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    height: 100%;
+    width: 20%;
+    
+    
 }
 
+hr{
+    width: 100%;
+}
 .firstInputContainer{
     width: 100%;
     height: auto;
@@ -78,6 +97,19 @@
     background-color: transparent;
 }
 
+.p{
+    width: 10rem;
+    height: 1.5rem;
+    color: black;
+
+}
+.questionMark{
+    background-color: black;
+    color: white;
+    padding: 0 0.2rem;
+    border-radius: 1.5rem;
+
+}
 .firstInputContainer input{
     width: 50%;
     height: 40px;
@@ -203,4 +235,16 @@ button{
     border: none;
     border-radius: 0.5rem;
     color: white;
+}
+
+p{
+    font-size: 0.7rem;
+    background-color: transparent;
+    font-weight: 100;
+    text-align: justify;
+    color: rgb(129, 109, 109);
+}
+
+p a{
+    background-color: transparent;
 }

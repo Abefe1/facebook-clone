@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import FacebookComponent from './FacebookHome'
-import SignUpFormComponent from './SignUpForm'
+import Home from './Home'
+import SignUpForm from './SignUpForm'
 // import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -12,8 +10,8 @@ function App() {
 
   return(
     <div >
-        <FacebookComponent  setPage={setPage} page={page}></FacebookComponent>
-        {page ? <SignUpFormComponent setPage={setPage} page={page} ></SignUpFormComponent> : ``}
+        <Home  setPage={setPage} page={page}></Home>
+        {page ? <SignUpForm setPage={setPage} page={page} ></SignUpForm> : ``}
     </div>
   )
 }

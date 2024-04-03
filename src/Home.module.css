@@ -1,6 +1,6 @@
 .backGroundBlur{
     filter: blur(1.5px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .mainContainer{
@@ -13,29 +13,42 @@
     column-gap: 6rem;
     margin-top: 10rem;
     padding: 0 8rem;
+    /* background-color: ; */
 }
 
 .leftContentContainer{
     width: 45%;
     height: auto;
     display: flex;
+    align-items: flex-end;
+    justify-content: center;
     flex-direction: column;
     row-gap: 1rem;
+    margin-bottom: 5rem;
 }
 
+.textDiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-left: 5.8rem;
+
+}
 .leftContentContainer h1{
     color: #0866FF;
-    font-size: 3.5rem;
+    font-size: 3.3rem;
 }
 
 .leftContentContainer h3{
     color: #2E2221;
-    font-size: 2rem;
+    font-size: 1.72rem;
     font-weight: 500;
+
 }
 
 .rightFormContainer{
     width: 40%;
+    
     height: auto;
 }
 
@@ -45,7 +58,9 @@
     flex-direction: column;
     row-gap: 1rem;
     background-color: white;
+    border-radius: 10px;
     padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .inputsContainer{
@@ -116,4 +131,20 @@
 Input:focus{
     outline: none;
     border-color:  #0866FF;
+}
+
+.lastDiv{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+}
+
+.lastDiv p{
+    font-size: 1rem;
+}
+
+.lastDiv span{
+    font-weight: bold;
 }
