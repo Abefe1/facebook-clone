@@ -83,6 +83,8 @@ const SignUpForm = ({page, setPage})=>{
 
     ]
 
+    const genders=[male, female, custom]
+
 
     const validate =()=>{
         for(let j=0; j<infosValidation.length; j++){
@@ -90,16 +92,26 @@ const SignUpForm = ({page, setPage})=>{
                 infosValidation[j].element.style.borderColor=`red`
                 infosValidation[j].element.style.borderWidth = `2px`
             } else{infosValidation[j].element.style.borderColor = `#CCD0D5`}
+
+            // if (infosValidation[j].value===formDatas.gender){
+            //     let array= infosValidation[j].element
+            //     for(let k=0; k<array.length; k++){
+            //         if(formDatas.gender===``){
+            //             array[k].style.borderColor=`red`
+            //             array[k].style.borderWidth = `2px`
+            //     } else{array[k].style.borderColor = `#CCD0D5`}
+            //         }
+            //     }
+
+            // if(formDatas.gender===``){
+            //     for(let k=0; k<genders.length; k++){
+            //         genders[k].style.borderColor=`red`
+            //         genders[k].style.borderWidth=`2px`
+            //     }
+            // } else{genders[k].style.borderColor=`#CCD0D5`}
         }
 
-        if (infosValidation[j].value===formDatas.gender){
-            for(let k=0; k<infosValidation[j].element.length; k++){
-                if(infosValidation[j].value===``){
-                    infosValidation[j].element[k].style.borderColor=`red`
-                    infosValidation[j].element[k].style.borderWidth = `2px`
-            } else{infosValidation[j].element[k].style.borderColor = `#CCD0D5`}
-                }
-            }
+        
         }
          
     
