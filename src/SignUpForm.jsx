@@ -188,17 +188,17 @@ const SignUpForm = ({page, setPage})=>{
                         <div className={style.radioOptionsContainer}>
                             <label>
                                 <p>Female</p>
-                                <input type="radio" name="gender" id="female"  />
+                                <input type="radio" name="gender" id="female" value='female'  onClick={handleformDatas}  />
                             </label> 
 
                             <label>
                                 <p>Male</p>
-                                <input type="radio" name="gender" id="male"  />
+                                <input type="radio" name="gender" id="male" value='male'  onClick={handleformDatas}  />
                             </label>
 
                             <label>
                                 <p>Custom</p>
-                                <input type="radio" name="gender" id="custom"  />
+                                <input type="radio" name="gender" id="custom" value='custom'  onClick={handleformDatas}/>
                             </label>
                         </div>
                     </div>
