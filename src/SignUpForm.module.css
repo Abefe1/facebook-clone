@@ -1,15 +1,13 @@
 
 .mainContainer{
-    width: 30%;
     height: auto;
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 500px;
-    bottom: 0.8rem;
+    position: fixed;
+    left: 35%;
+    bottom: 15%;
     border-radius: 10px;
     background-color: white;
-    
     
 }
 
